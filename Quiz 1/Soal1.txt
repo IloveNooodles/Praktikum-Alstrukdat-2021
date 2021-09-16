@@ -1,0 +1,65 @@
+type location : < longitude : real, latitude : real, locationName : string >
+{longitude dan latitude berupa koordinat sehingga bertipe real, locationName berupa string karena dia adalah nama tempat}
+
+Konstruktor
+procedure createLocation(output l: location)
+{I.S L Sembarang}
+{F.S terbentuk tipe data lokasi dengan nilai location dan latitude = 0.0 serta locationName = ''}
+
+SELEKTOR
+function getLongitude(l : location) -> real
+{Prekondisi L terdefinisi}
+{mendapatkan lokasi longitude dari sebuah tipe data location}
+function getLatitude(l : location) -> real
+{Prekondisi L terdefinisi}
+{mendapatkan lokasi latitude dari sebuah tipe data location}
+function getLocationName(l: location) -> string
+{Prekondisi L terdefinisi}
+{mendapatkan nama lokasi dari sebuah tipe data location}
+
+procedure setLongitude(output l: location, input x : real)
+{I.S l terdefinisi}
+{F.S longitude pada l akan diset dengan nilai x}
+procedure setLatitude(output l : location, input x : real)
+{I.S l terdefinisi}
+{F.S latitude pada l akan diset dengan nilai x}
+procedure setLocationName(output l: location, input str : string)
+{I.S l terdefinisi}
+{F.S nama lokasi pada l akan diset dengan nilai str}
+
+procedure makeLocation(output l : location, input longitude : real, input latitude: real, input locationName: string)
+{I.S L terdefinisi}
+{F.S Terbentuk lokasi dengan longitude, latitude, dan locationName yang diberikan}
+
+function jarakLocation(l1, l2 : location) -> real
+{Prekondisi l1 dan l2 terdefinisi}
+{Mengembalikan jarak anatara 2 lokasi}
+
+function isEquator(l : location) -> boolean
+{Prekondisi L terdefinisi}
+{Mengembalikan nilai true jika berada di equator dan false jika tidak}
+
+OPERASI
+procedure makeLocation(output l : location, input longitude : real, input latitude: real, input locationName: string)
+KAMUS LOKAL
+ALGORITMA
+setLongitude(l, longitude)
+setLatitude(l, latitude)
+setLocationName(l, locationName)
+
+function jarakLocation(l1, l2 : location) -> real
+KAMUS LOKAL
+CONSTANT R : Real = 6371
+
+ALGORITMA
+  -> 2 * R * inversSin(sqrt(kuadrat(sin((getLatitude(l2)-getLatitude(l1))/2)))) + cos(getLatitude(l1)) * cos(getLatitude(l2)) * kuadrat(sin((getLongitude(l2)-getLongitude(l1))/2)
+
+function isEquator(l : location) -> boolean
+KAMUS LOKAL
+ALGORITMA
+
+if(getLatitude(l) = 0 and getLongitude(l) = 0) then
+  -> true
+else
+  -> false
+

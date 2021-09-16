@@ -1,0 +1,69 @@
+a)
+function getFirstIdx(L : list) -> integer
+KAMUS LOKAL
+ALGORITMA
+-> 0
+
+function getLastIdx(L : list) -> integer
+KAMUS LOKAL
+ALGORITMA
+-> L.NEff - 1
+
+procedure deleteAt(input/output L : List, input idx : integer, output value: ELType)
+KAMUS LOKAL
+i, j : integer
+ALGORITMA
+i <- idx + 1
+j <- idx
+value <- getElmt(L, idx)
+while(i < L.NEff) do
+  setElmt(L, j, getElmt(L, i))
+  i <- i + 1
+  j <- j + 1
+L.NEff <- l.NEff - 1
+
+function isFull(L : list) -> boolean
+KAMUS LOKAL
+ALGORITMA
+if L.NEff = NMAX then
+  -> true
+else
+  -> false
+
+b)
+procedure removeAllX(input/output L : list, input x : ELType)
+KAMUS LOKAL
+i, j, tempIdx, count: integer
+isX : boolean
+ALGORITMA
+i <- 0
+j <- 0
+count <- 0
+tempIdx <- 0
+i traversal [0..L.NEff - 1]
+  if(getElmt(L, i) = x) then
+    tempIdx <- i
+    j <- i+1
+    count <- count + 1
+    while(j < L.NEff)
+      setElmt(L, j-1, getElmt(L, j))
+      j <- j + 1
+L.NEff <- L.NEff - count
+
+function isAllLessThen(L1, L2: List) -> boolean
+KAMUS LOKAL
+i : integer
+less : boolean
+ALGORITMA
+if L1.NEff > L2.NEff then
+  -> false
+else
+  i <- 0
+  less <- true
+  while(less and i < l1.NEff) do
+    if(!isLessThen(getElmt(L1), L2))) then
+      less <- false
+
+-> less
+
+
