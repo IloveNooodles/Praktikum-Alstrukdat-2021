@@ -1,3 +1,3 @@
-#Praktikum Alstrukdat#
+# Praktikum Alstrukdat
 
-Source code dari praktikum alstrukdat 2021
+Source code dari Praktikum Alstrukdat 2021
